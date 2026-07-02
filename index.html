@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ParkWarn 泊車旺 - 您的專屬泊車定時與防罰單助手</title>
-    <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
-    <!-- 導覽列 -->
     <nav class="container mx-auto px-6 py-5 flex justify-between items-center border-b border-gray-900">
         <div class="text-xl md:text-2xl font-bold flex items-center gap-3 tracking-wide">
             <img src="icon.png" alt="ParkWarn Icon" class="w-9 h-9 rounded-xl shadow-md">
-            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn <span data-lang="navTitle">泊車旺</span></span>
+            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" data-lang="navTitle">ParkWarn 泊車旺</span>
         </div>
         <div class="flex items-center gap-4 md:gap-6">
             <a href="#features" data-lang="navFeatures" class="text-gray-400 hover:text-emerald-400 transition text-sm md:text-base hidden sm:inline">功能特點</a>
             <a href="#preview" data-lang="navPreview" class="text-gray-400 hover:text-emerald-400 transition text-sm md:text-base hidden sm:inline">介面預覽</a>
             
-            <!-- 語言選擇下拉選單 -->
             <div class="relative inline-block text-left">
                 <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-gray-900 text-gray-300 border border-gray-800 rounded-lg px-2 py-1.5 text-xs md:text-sm focus:outline-none focus:border-emerald-500 cursor-pointer">
                     <option value="zh-HK">繁體中文</option>
@@ -33,9 +30,7 @@
         </div>
     </nav>
 
-    <!-- 主視覺區 (Hero Section) -->
     <header class="container mx-auto px-6 pt-12 pb-20 flex flex-col items-center text-center max-w-4xl">
-        <!-- 頂部宣傳圖 -->
         <div class="w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-800 mb-12">
             <img src="Image1.png" alt="ParkWarn 泊車旺" class="w-full object-cover">
         </div>
@@ -54,26 +49,22 @@
         </div>
     </header>
 
-    <!-- 功能特點 -->
     <section id="features" class="bg-gray-900/50 border-y border-gray-900 py-20">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16 tracking-wide" id="featuresTitle">
                 為什麼選擇 <span class="text-emerald-400">泊車旺</span>？
             </h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- 特點 1 -->
                 <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition group">
                     <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-bell"></i></div>
                     <h3 class="text-xl font-bold mb-3" data-lang="f1Title">多重預警通知</h3>
                     <p class="text-gray-400 leading-relaxed text-sm" data-lang="f1Desc">自訂倒數時間，在時間結束前精準發出強力提醒，確保您有充裕時間移車、入錶或補繳費用。</p>
                 </div>
-                <!-- 特點 2 -->
                 <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition group">
                     <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-bolt"></i></div>
                     <h3 class="text-xl font-bold mb-3" data-lang="f2Title">極簡一鍵啟動</h3>
                     <p class="text-gray-400 leading-relaxed text-sm" data-lang="f2Desc">停好車、輸入車位（如 B2 102）與時租，點擊一下即可開始計時。介面專為駕駛場景進行深色優化。</p>
                 </div>
-                <!-- 特點 3 -->
                 <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition group">
                     <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                     <h3 class="text-xl font-bold mb-3" data-lang="f3Title">彈性計費規則</h3>
@@ -83,26 +74,21 @@
         </div>
     </section>
 
-    <!-- App 實機截圖預覽 -->
     <section id="preview" class="py-20 container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-16 tracking-wide" data-lang="previewTitle">真實介面預覽</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <!-- 截圖 1 -->
             <div class="bg-gray-900 p-2 rounded-2xl border border-gray-800 shadow-xl">
                 <img src="n1.jpg" alt="ParkWarn" class="rounded-xl w-full">
                 <p class="text-center text-xs text-gray-400 mt-2 py-1" data-lang="p1Text">設定到期提醒</p>
             </div>
-            <!-- 截圖 2 -->
             <div class="bg-gray-900 p-2 rounded-2xl border border-gray-800 shadow-xl">
                 <img src="n2.jpg" alt="ParkWarn" class="rounded-xl w-full">
                 <p class="text-center text-xs text-gray-400 mt-2 py-1" data-lang="p2Text">泊車歷史紀錄</p>
             </div>
-            <!-- 截圖 3 -->
             <div class="bg-gray-900 p-2 rounded-2xl border border-gray-800 shadow-xl">
                 <img src="n3.jpg" alt="ParkWarn" class="rounded-xl w-full">
                 <p class="text-center text-xs text-gray-400 mt-2 py-1" data-lang="p3Text">即時收費估算</p>
             </div>
-            <!-- 截圖 4 -->
             <div class="bg-gray-900 p-2 rounded-2xl border border-gray-800 shadow-xl">
                 <img src="n4.jpg" alt="ParkWarn" class="rounded-xl w-full">
                 <p class="text-center text-xs text-gray-400 mt-2 py-1" data-lang="p4Text">到期推播通知</p>
@@ -110,7 +96,6 @@
         </div>
     </section>
 
-    <!-- 下載與審核狀態區 -->
     <section id="download" class="container mx-auto px-6 py-12 text-center max-w-3xl">
         <div class="bg-gradient-to-b from-gray-900 to-gray-950 border border-emerald-500/30 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
             <h2 class="text-3xl font-bold mb-4" data-lang="statusTitle">即將於 Google Play 正式登場</h2>
@@ -123,16 +108,14 @@
         </div>
     </section>
 
-    <!-- 頁尾 -->
     <footer class="border-t border-gray-900 py-8 text-center text-xs text-gray-500">
-        <p>&copy; 2026 ParkWarn <span data-lang="navTitle">泊車旺</span>. All rights reserved. Designed by Raymond.</p>
+        <p>&copy; 2026 <span data-lang="navTitle">ParkWarn 泊車旺</span>. All rights reserved. Designed by Raymond.</p>
     </footer>
 
-    <!-- 語言切換邏輯指令碼 -->
     <script>
         const langData = {
             'zh-HK': {
-                navTitle: '泊車旺',
+                navTitle: 'ParkWarn 泊車旺',
                 navFeatures: '功能特點',
                 navPreview: '介面預覽',
                 navDownload: '免費下載',
@@ -156,7 +139,7 @@
                 statusTag: 'Google Play 審核中 (已於 7 月 2 日提交)'
             },
             'zh-CN': {
-                navTitle: '泊车旺',
+                navTitle: 'ParkWarn 泊车旺',
                 navFeatures: '功能特点',
                 navPreview: '界面预览',
                 navDownload: '免费下载',
@@ -219,11 +202,11 @@
             document.getElementById('featuresTitle').innerHTML = langData[lang].featuresTitle;
             document.getElementById('statusTag').textContent = langData[lang].statusTag;
             
-            // 將偏好儲存至瀏覽器本地，下次進來自動記住語系
+            // 將偏好儲存至瀏覽器本地
             localStorage.setItem('preferredLang', lang);
         }
 
-        // 頁面初始化：檢查是否有儲存過語系偏好，沒有就預設繁中
+        // 頁面初始化
         window.onload = function() {
             const savedLang = localStorage.getItem('preferredLang') || 'zh-HK';
             document.getElementById('langSelect').value = savedLang;
