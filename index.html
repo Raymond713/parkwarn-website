@@ -115,7 +115,7 @@
         </p>
     </footer>
 
-    <script>
+<script>
         const langData = {
             'zh-HK': {
                 navTitle: 'ParkWarn 泊車旺',
@@ -146,7 +146,7 @@
                 navFeatures: '功能特点',
                 navPreview: '界面预览',
                 navDownload: '免费下载',
-                heroTitle: '告别超时罚单！<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn 泊车旺</span> 帮您精准守护爱车',
+                heroTitle: '告别超时罚单！<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn 泊车旺</span> 帮您精准守护爱车',
                 heroDesc: '专为车主设计的智慧泊车通知工具。简洁、直观、可靠，支持多种计费规则，让您在专注工作或享用美食时，再也没有后顾之忧。',
                 btnDownload: 'Google Play 下载',
                 featuresTitle: '为什么选择 <span class="text-emerald-400">泊车旺</span>？',
@@ -170,7 +170,7 @@
                 navFeatures: 'Features',
                 navPreview: 'Screenshots',
                 navDownload: 'Download',
-                heroTitle: 'Say Goodbye to Parking Tickets!<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn</span> Safeguards Your Car Perfectly',
+                heroTitle: 'Say Goodbye to Parking Tickets!<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn</span> Safeguards Your Car Perfectly',
                 heroDesc: 'Smart parking notification tool designed for car owners. Simple, intuitive, and reliable. Supports multiple billing rules so you can focus on work or dining without any worries.',
                 btnDownload: 'Download on Google Play',
                 featuresTitle: 'Why Choose <span class="text-emerald-400">ParkWarn</span>?',
@@ -200,7 +200,7 @@
                 }
             });
 
-            // 更新帶有複雜 HTML 的區塊
+            // 更新帶有複雜 HTML 的區塊（已包含相容性樣式修復）
             document.getElementById('heroTitle').innerHTML = langData[lang].heroTitle;
             document.getElementById('featuresTitle').innerHTML = langData[lang].featuresTitle;
             document.getElementById('statusTag').textContent = langData[lang].statusTag;
