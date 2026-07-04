@@ -191,12 +191,18 @@
             }
         };
 
-        function changeLanguage(lang) {
+         function changeLanguage(lang) {
             // 更新帶有 data-lang 屬性的標準文字
             document.querySelectorAll('[data-lang]').forEach(element => {
                 const key = element.getAttribute('data-lang');
                 if (langData[lang][key]) {
                     element.textContent = langData[lang][key];
+                    
+                    // 關鍵修復：如果是左上角的 navTitle，強制確保它的相容性 style 不會丟失
+                    if (key === 'navTitle') {
+                        element.style.webkitBackgroundClip = 'text';
+                        element.style.backgroundClip = 'text';
+                    }
                 }
             });
 
