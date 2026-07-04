@@ -12,7 +12,7 @@
     <nav class="container mx-auto px-6 py-5 flex justify-between items-center border-b border-gray-900">
         <div class="text-xl md:text-2xl font-bold flex items-center gap-3 tracking-wide">
             <img src="icon.png" alt="ParkWarn Icon" class="w-9 h-9 rounded-xl shadow-md">
-            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn 泊車旺</span>
+            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;" data-lang="navTitle">ParkWarn 泊車旺</span>
         </div>
         <div class="flex items-center gap-4 md:gap-6">
             <a href="#features" data-lang="navFeatures" class="text-gray-400 hover:text-emerald-400 transition text-sm md:text-base hidden sm:inline">功能特點</a>
@@ -190,34 +190,29 @@
                 statusTag: 'Under Google Play Review (Submitted on Jul 2)'
             }
         };
-
-        function changeLanguage(lang) {
-            // 1. 先處理一般 data-lang 元素
-            document.querySelectorAll('[data-lang]').forEach(element => {
-                const key = element.getAttribute('data-lang');
-                // 排除 navTitle 的常規處理，由下方單獨以 innerHTML 注入確保樣式完美相容
-                if (key !== 'navTitle' && langData[lang][key]) {
-                    element.textContent = langData[lang][key];
-                }
-            });
-
-            // 2. 單獨針對所有 navTitle 的標籤用 innerHTML 處理，確保漸層及 Webkit 裁剪樣式在語言切換時被強制重新渲染
-            document.querySelectorAll('[data-lang="navTitle"]').forEach(element => {
-                element.innerHTML = langData[lang].navTitle;
-                // 強制注入相容性 Style，根治有些瀏覽器不變色或變綠色塊的問題
-                element.style.webkitBackgroundClip = 'text';
-                element.style.backgroundClip = 'text';
-            });
-
-            // 3. 更新帶有複雜包含標籤 HTML 的主標題區塊
-            document.getElementById('heroTitle').innerHTML = langData[lang].heroTitle;
-            document.getElementById('featuresTitle').innerHTML = langData[lang].featuresTitle;
-            document.getElementById('statusTag').textContent = langData[lang].statusTag;
-            
-            // 將偏好儲存至瀏覽器本地
-            localStorage.setItem('preferredLang', lang);
+function changeLanguage(lang) {
+    // 1. 先處理一般 data-lang 元素
+    document.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (key !== 'navTitle' && langData[lang][key]) {
+            element.textContent = langData[lang][key];
         }
+    });
 
+    // 2. 單獨針對所有 navTitle 的標籤用 innerHTML 處理，確保相容性與語言切換正常
+    document.querySelectorAll('[data-lang="navTitle"]').forEach(element => {
+        element.innerHTML = langData[lang].navTitle;
+        element.style.webkitBackgroundClip = 'text';
+        element.style.backgroundClip = 'text';
+    });
+
+    // 3. 更新其他複雜區塊
+    document.getElementById('heroTitle').innerHTML = langData[lang].heroTitle;
+    document.getElementById('featuresTitle').innerHTML = langData[lang].featuresTitle;
+    document.getElementById('statusTag').textContent = langData[lang].statusTag;
+    
+    localStorage.setItem('preferredLang', lang);
+}
         // 頁面初始化
         window.onload = function() {
             const savedLang = localStorage.getItem('preferredLang') || 'zh-HK';
