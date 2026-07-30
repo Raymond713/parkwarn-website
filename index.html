@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParkWarn 泊車旺 - 您的智慧泊車時租與免泊優惠助手</title>
+    <title>ParkWarn 泊車旺 - 泊車計時提醒助手</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -16,7 +16,8 @@
         </div>
         <div class="flex items-center gap-4 md:gap-6">
             <a href="#features" data-lang="navFeatures" class="text-gray-400 hover:text-emerald-400 transition text-sm md:text-base hidden sm:inline">功能特點</a>
-            <a href="#preview" data-lang="navPreview" class="text-gray-400 hover:text-emerald-400 transition text-sm md:text-base hidden sm:inline">介面預覽</a>
+            <a href="#comparison" data-lang="navComparison" class="text-gray-400 hover:text-emerald-400 transition text-sm md:text-base hidden sm:inline">為什麼不用鬧鐘？</a>
+            <a href="#preview" data-lang="navPreview" class="text-gray-400 hover:text-emerald-400 transition text-sm md:text-base hidden sm:inline">使用流程</a>
             
             <div class="relative inline-block text-left">
                 <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-gray-900 text-gray-300 border border-gray-800 rounded-lg px-2 py-1.5 text-xs md:text-sm focus:outline-none focus:border-emerald-500 cursor-pointer">
@@ -35,12 +36,19 @@
             <img src="Image1.png" alt="ParkWarn 泊車旺" class="w-full object-cover">
         </div>
         
-        <h1 class="text-3xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight" id="heroTitle">
-            掌控時租進度，輕鬆精準計時！<br>
-            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn 泊車旺</span> 幫您精準守護愛車
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-tight" id="heroTitle">
+            忘記停車時間？<br>
+            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn</span> 在停車期限前主動提醒您，避免超時多付停車費。
         </h1>
+
+        <!-- Highlight Key Selling Point Badge -->
+        <div class="mb-6 px-4 py-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-sm md:text-base font-semibold inline-flex items-center gap-2">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span data-lang="heroTagline">別因一時忘記，而多付一小時停車費。</span>
+        </div>
+
         <p class="text-base md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed" data-lang="heroDesc">
-            專為香港車主設計的商場時租與免泊優惠計時工具。簡潔、直覺、可靠，支援多種計費規則，讓您在專注工作或享用美食時，不再擔心超時多付一小時。
+            專為香港車主設計，協助您管理停車時間、免泊優惠及停車費估算。到期前主動提醒，避免因一時忘記而多付停車費。
         </p>
         <div class="flex justify-center gap-4">
             <a href="#download" class="bg-emerald-500 hover:bg-emerald-600 text-gray-950 px-8 py-3.5 rounded-xl font-bold text-lg shadow-xl shadow-emerald-500/20 transition flex items-center gap-2">
@@ -56,54 +64,112 @@
             </h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition group">
-                    <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-bell"></i></div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="f1Title">多重預警通知</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm" data-lang="f1Desc">自訂倒數時間，在時租或商場免泊優惠結束前精準發出強力提醒，確保您有充裕時間回到停車場，避免超時。</p>
+                    <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-bell-slash"></i></div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="f1Title">避免超時收費</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-lang="f1Desc">在停車時間或免泊優惠即將結束前發出多次提醒，讓您有足夠時間返回車輛。</p>
                 </div>
                 <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition group">
-                    <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-bolt"></i></div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="f2Title">極簡一鍵啟動</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm" data-lang="f2Desc">停好車、輸入車位（如 B2 102）與時租，點擊一下即可開始計時。介面專為日常泊車與商場購物場景進行深色優化。</p>
+                    <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-stopwatch"></i></div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="f2Title">停車後立即開始計時</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-lang="f2Desc">30 秒即可完成設定！停好車後只需輸入車位與時租，一鍵即刻啟動倒數與記錄。</p>
                 </div>
                 <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition group">
-                    <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                    <h3 class="text-xl font-bold mb-3" data-lang="f3Title">彈性計費規則</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm" data-lang="f3Desc">支援「不足1小時計」、「不足半小時計」或「實時比例」等多元計費規則，即時動態估算當前的泊車時租收費。</p>
+                    <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-calculator"></i></div>
+                    <h3 class="text-xl font-bold mb-3" data-lang="f3Title">靈活估算停車費用</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-lang="f3Desc">支援香港常見停車場的不同收費模式，包括每小時、不足半小時及按比例收費，即時估算目前停車費。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="preview" class="py-20 container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-16 tracking-wide" data-lang="previewTitle">真實介面預覽</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div class="bg-gray-900 p-2 rounded-2xl border border-gray-800 shadow-xl">
-                <img src="n1.jpg" alt="ParkWarn" class="rounded-xl w-full">
-                <p class="text-center text-xs text-gray-400 mt-2 py-1" data-lang="p1Text">設定到期提醒</p>
-            </div>
-            <div class="bg-gray-900 p-2 rounded-2xl border border-gray-800 shadow-xl">
-                <img src="n2.jpg" alt="ParkWarn" class="rounded-xl w-full">
-                <p class="text-center text-xs text-gray-400 mt-2 py-1" data-lang="p2Text">泊車歷史紀錄</p>
-            </div>
-            <div class="bg-gray-900 p-2 rounded-2xl border border-gray-800 shadow-xl">
-                <img src="n3.jpg" alt="ParkWarn" class="rounded-xl w-full">
-                <p class="text-center text-xs text-gray-400 mt-2 py-1" data-lang="p3Text">即時收費估算</p>
-            </div>
-            <div class="bg-gray-900 p-2 rounded-2xl border border-gray-800 shadow-xl">
-                <img src="n4.jpg" alt="ParkWarn" class="rounded-xl w-full">
-                <p class="text-center text-xs text-gray-400 mt-2 py-1" data-lang="p4Text">到期推播通知</p>
+    <!-- Why Not Phone Alarm Section -->
+    <section id="comparison" class="py-20 container mx-auto px-6 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-4 tracking-wide" id="compTitle">
+            為什麼不用手機鬧鐘？
+        </h2>
+        <p class="text-center text-gray-400 mb-12 text-sm md:text-base max-w-xl mx-auto" data-lang="compSubtitle">
+            普通鬧鐘只能單次響鬧，ParkWarn 為車主提供全方位的泊車管理體驗：
+        </p>
+
+        <div class="bg-gray-900 rounded-2xl border border-gray-800 p-6 md:p-8 shadow-xl">
+            <div class="grid grid-cols-1 divide-y divide-gray-800">
+                <div class="py-4 flex items-start gap-4">
+                    <div class="text-emerald-400 text-xl mt-0.5"><i class="fa-solid fa-circle-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white" data-lang="comp1Title">多次提醒，而不是只有一次鬧鐘</h4>
+                        <p class="text-gray-400 text-sm mt-1" data-lang="comp1Desc">提供預警彈性，避免響一次後按掉就忘記返回車輛。</p>
+                    </div>
+                </div>
+                <div class="py-4 flex items-start gap-4">
+                    <div class="text-emerald-400 text-xl mt-0.5"><i class="fa-solid fa-circle-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white" data-lang="comp2Title">支援多種停車收費模式</h4>
+                        <p class="text-gray-400 text-sm mt-1" data-lang="comp2Desc">專為香港各類停車場規則計算，非單純時間倒數。</p>
+                    </div>
+                </div>
+                <div class="py-4 flex items-start gap-4">
+                    <div class="text-emerald-400 text-xl mt-0.5"><i class="fa-solid fa-circle-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white" data-lang="comp3Title">即時估算目前停車費</h4>
+                        <p class="text-gray-400 text-sm mt-1" data-lang="comp3Desc">隨時開啟 App 即可了解當前已累積的費用進度。</p>
+                    </div>
+                </div>
+                <div class="py-4 flex items-start gap-4">
+                    <div class="text-emerald-400 text-xl mt-0.5"><i class="fa-solid fa-circle-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white" data-lang="comp4Title">記錄停車位置及歷史</h4>
+                        <p class="text-gray-400 text-sm mt-1" data-lang="comp4Desc">隨手紀錄車位號碼（如 B2 102），不再在大型商場迷路找車。</p>
+                    </div>
+                </div>
+                <div class="py-4 flex items-start gap-4">
+                    <div class="text-emerald-400 text-xl mt-0.5"><i class="fa-solid fa-circle-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white" data-lang="comp5Title">可管理商場免泊優惠</h4>
+                        <p class="text-gray-400 text-sm mt-1" data-lang="comp5Desc">精準倒數免泊換領上限，發揮商場優惠最大價值。</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="download" class="container mx-auto px-6 py-12 text-center max-w-3xl">
+    <section id="preview" class="py-20 bg-gray-900/30 border-t border-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 tracking-wide" data-lang="previewTitle">四步開始泊車</h2>
+            <p class="text-center text-gray-400 mb-16 text-sm md:text-base" data-lang="previewSubtitle">簡單流暢的使用流程，為您守護每一分錢</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="bg-gray-900 p-4 rounded-2xl border border-gray-800 shadow-xl flex flex-col items-center">
+                    <div class="bg-emerald-500/10 text-emerald-400 font-bold px-3 py-1 rounded-full text-xs mb-3">STEP 1</div>
+                    <img src="n1.jpg" alt="ParkWarn" class="rounded-xl w-full mb-3 object-cover">
+                    <p class="text-center font-bold text-sm text-gray-200" data-lang="p1Text">設定停車時間</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-2xl border border-gray-800 shadow-xl flex flex-col items-center">
+                    <div class="bg-emerald-500/10 text-emerald-400 font-bold px-3 py-1 rounded-full text-xs mb-3">STEP 2</div>
+                    <img src="n2.jpg" alt="ParkWarn" class="rounded-xl w-full mb-3 object-cover">
+                    <p class="text-center font-bold text-sm text-gray-200" data-lang="p2Text">開始倒數</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-2xl border border-gray-800 shadow-xl flex flex-col items-center">
+                    <div class="bg-emerald-500/10 text-emerald-400 font-bold px-3 py-1 rounded-full text-xs mb-3">STEP 3</div>
+                    <img src="n3.jpg" alt="ParkWarn" class="rounded-xl w-full mb-3 object-cover">
+                    <p class="text-center font-bold text-sm text-gray-200" data-lang="p3Text">查看目前停車費</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-2xl border border-gray-800 shadow-xl flex flex-col items-center">
+                    <div class="bg-emerald-500/10 text-emerald-400 font-bold px-3 py-1 rounded-full text-xs mb-3">STEP 4</div>
+                    <img src="n4.jpg" alt="ParkWarn" class="rounded-xl w-full mb-3 object-cover">
+                    <p class="text-center font-bold text-sm text-gray-200" data-lang="p4Text">收到提醒</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="container mx-auto px-6 py-16 text-center max-w-3xl">
         <div class="bg-gradient-to-b from-gray-900 to-gray-950 border border-emerald-500/30 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-            <h2 class="text-3xl font-bold mb-4" data-lang="statusTitle">即將於 Google Play 正式登場</h2>
+            <h2 class="text-3xl font-bold mb-4" data-lang="statusTitle">即將於 Google Play 推出</h2>
             <p class="text-gray-400 mb-8 text-sm md:text-base max-w-md mx-auto leading-relaxed" data-lang="statusDesc">
-                目前產品正在進行最後的 Google 官方封閉測試與審核階段。我們致力於為您帶來最穩定、不漏接的泊車計時體驗！
+                ParkWarn 正在完成 Google Play 最後審核，很快便可正式下載。
             </p>
             <div class="inline-flex items-center gap-2.5 bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 px-6 py-2.5 rounded-full font-mono text-sm shadow-inner shadow-emerald-900/50">
-                <i class="fa-solid fa-spinner animate-spin"></i> <span id="statusTag">Google Play 審核中 (已於 7 月 2 日提交)</span>
+                <i class="fa-solid fa-clock"></i> <span id="statusTag">Google Play 審核中</span>
             </div>
         </div>
     </section>
@@ -120,74 +186,119 @@
             'zh-HK': {
                 navTitle: 'ParkWarn 泊車旺',
                 navFeatures: '功能特點',
-                navPreview: '介面預覽',
+                navComparison: '為什麼不用鬧鐘？',
+                navPreview: '使用流程',
                 navDownload: '免費下載',
-                heroTitle: '掌控時租進度，輕鬆精準計時！<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn 泊車旺</span> 幫您精準守護愛車',
-                heroDesc: '專為香港車主設計的商場時租與免泊優惠計時工具。簡潔、直覺、可靠，支援多種計費規則，讓您在專注工作或享用美食時，不再擔心超時多付一小時。',
+                heroTitle: '忘記停車時間？<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn</span> 在停車期限前主動提醒您，避免超時多付停車費。',
+                heroTagline: '別因一時忘記，而多付一小時停車費。',
+                heroDesc: '專為香港車主設計，協助您管理停車時間、免泊優惠及停車費估算。到期前主動提醒，避免因一時忘記而多付停車費。',
                 btnDownload: 'Google Play 下載',
                 featuresTitle: '為什麼選擇 <span class="text-emerald-400">泊車旺</span>？',
-                f1Title: '多重預警通知',
-                f1Desc: '自訂倒數時間，在時租或商場免泊優惠結束前精準發出強力提醒，確保您有充裕時間回到停車場，避免超時。',
-                f2Title: '極簡一鍵啟動',
-                f2Desc: '停好車、輸入車位（如 B2 102）與時租，點擊一下即可開始計時。介面專為日常泊車與商場購物場景進行深色優化。',
-                f3Title: '彈性計費規則',
-                f3Desc: '支援「不足1小時計」、「不足半小時計」或「實時比例」等多元計費規則，即時動態估算當前的泊車時租收費。',
-                previewTitle: '真實介面預覽',
-                p1Text: '設定到期提醒',
-                p2Text: '泊車歷史紀錄',
-                p3Text: '即時收費估算',
-                p4Text: '到期推播通知',
-                statusTitle: '即將於 Google Play 正式登場',
-                statusDesc: '目前產品正在進行最後的 Google 官方封閉測試與審核階段。我們致力於為您帶來最穩定、不漏接的泊車計時體驗！',
-                statusTag: 'Google Play 審核中 (已於 7 月 2 日提交)'
+                f1Title: '避免超時收費',
+                f1Desc: '在停車時間或免泊優惠即將結束前發出多次提醒，讓您有足夠時間返回車輛。',
+                f2Title: '停車後立即開始計時',
+                f2Desc: '30 秒即可完成設定！停好車後只需輸入車位與時租，一鍵即刻啟動倒數與記錄。',
+                f3Title: '靈活估算停車費用',
+                f3Desc: '支援香港常見停車場的不同收費模式，包括每小時、不足半小時及按比例收費，即時估算目前停車費。',
+                compTitle: '為什麼不用手機鬧鐘？',
+                compSubtitle: '普通鬧鐘只能單次響鬧，ParkWarn 為車主提供全方位的泊車管理體驗：',
+                comp1Title: '多次提醒，而不是只有一次鬧鐘',
+                comp1Desc: '提供預警彈性，避免響一次後按掉就忘記返回車輛。',
+                comp2Title: '支援多種停車收費模式',
+                comp2Desc: '專為香港各類停車場規則計算，非單純時間倒數。',
+                comp3Title: '即時估算目前停車費',
+                comp3Desc: '隨時開啟 App 即可了解當前已累積的費用進度。',
+                comp4Title: '記錄停車位置及歷史',
+                comp4Desc: '隨手紀錄車位號碼（如 B2 102），不再在大型商場迷路找車。',
+                comp5Title: '可管理商場免泊優惠',
+                comp5Desc: '精準倒數免泊換領上限，發揮商場優惠最大價值。',
+                previewTitle: '四步開始泊車',
+                previewSubtitle: '簡單流暢的使用流程，為您守護每一分錢',
+                p1Text: '設定停車時間',
+                p2Text: '開始倒數',
+                p3Text: '查看目前停車費',
+                p4Text: '收到提醒',
+                statusTitle: '即將於 Google Play 推出',
+                statusDesc: 'ParkWarn 正在完成 Google Play 最後審核，很快便可正式下載。',
+                statusTag: 'Google Play 審核中'
             },
             'zh-CN': {
                 navTitle: 'ParkWarn 泊车旺',
                 navFeatures: '功能特点',
-                navPreview: '界面预览',
+                navComparison: '为什么不用闹钟？',
+                navPreview: '使用流程',
                 navDownload: '免费下载',
-                heroTitle: '掌控时租进度，轻松精准计时！<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn 泊车旺</span> 帮您精准守护爱车',
-                heroDesc: '专为车主设计的商场时租与免泊优惠计时工具。简洁、直观、可靠，支持多种计费规则，让您在专注工作或享用美食时，不再担心超时多付一小时。',
+                heroTitle: '忘记停车时间？<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn</span> 在停车期限前主动提醒您，避免超时多付停车费。',
+                heroTagline: '别因一时忘记，而多付一小时停车费。',
+                heroDesc: '专为车主设计，协助您管理停车时间、免泊优惠及停车费估算。到期前主动提醒，避免因一时忘记而多付停车费。',
                 btnDownload: 'Google Play 下载',
                 featuresTitle: '为什么选择 <span class="text-emerald-400">泊车旺</span>？',
-                f1Title: '多重预警通知',
-                f1Desc: '自定义倒数时间，在时租或商场免泊优惠结束前精准发出强力提醒，确保您有充裕时间回到停车场，避免超时。',
-                f2Title: '极简一键启动',
-                f2Desc: '停好车、输入车位（如 B2 102）与时租，点击一下即可开始计时。界面专为日常泊车与商场购物场景进行深色优化。',
-                f3Title: '弹性计费规则',
-                f3Desc: '支持“不足1小时计”、“不足半小时计”或“实时比例”等多元计费规则，即时动态估算当前的泊车时租收费。',
-                previewTitle: '真实界面预览',
-                p1Text: '设定到期提醒',
-                p2Text: '泊车历史纪录',
-                p3Text: '即时收费估算',
-                p4Text: '到期推送通知',
-                statusTitle: '即将于 Google Play 正式登場',
-                statusDesc: '目前产品正在进行最后的 Google 官方封闭测试与审核阶段。我们致力于为您带来最稳定、不漏接的泊车计时体验！',
-                statusTag: 'Google Play 审核中 (已于 7 月 2 日提交)'
+                f1Title: '避免超时收费',
+                f1Desc: '在停车时间或免泊优惠即将结束前发出多次提醒，让您有足够时间返回车辆。',
+                f2Title: '停车后立即开始计时',
+                f2Desc: '30 秒即可完成设定！停好车后只需输入车位与时租，一键即刻启动倒数与记录。',
+                f3Title: '灵活估算停车费用',
+                f3Desc: '支持常见停车场的不同收费模式，包括每小时、不足半小时及按比例收费，即时估算目前停车费。',
+                compTitle: '为什么不用手机闹钟？',
+                compSubtitle: '普通闹钟只能单次响闹，ParkWarn 为车主提供全方位的泊车管理体验：',
+                comp1Title: '多次提醒，而不是只有一次闹钟',
+                comp1Desc: '提供预警弹性，避免响一次后按掉就忘记返回车辆。',
+                comp2Title: '支持多种停车收费模式',
+                comp2Desc: '专为各类停车场规则计算，非单纯时间倒数。',
+                comp3Title: '即时估算目前停车费',
+                comp3Desc: '随时开启 App 即可了解当前已累积的费用进度。',
+                comp4Title: '记录停车位置及历史',
+                comp4Desc: '随手纪录车位号码（如 B2 102），不再在大商场迷路找车。',
+                comp5Title: '可管理商场免泊优惠',
+                comp5Desc: '精准倒数免泊换领上限，发挥商场优惠最大价值。',
+                previewTitle: '四步开始泊车',
+                previewSubtitle: '简单流畅的使用流程，为您守护每一分钱',
+                p1Text: '设定停车时间',
+                p2Text: '开始倒数',
+                p3Text: '查看目前停车费',
+                p4Text: '收到提醒',
+                statusTitle: '即将于 Google Play 推出',
+                statusDesc: 'ParkWarn 正在完成 Google Play 最后审核，很快便可正式下载。',
+                statusTag: 'Google Play 审核中'
             },
             'en': {
                 navTitle: 'ParkWarn',
                 navFeatures: 'Features',
-                navPreview: 'Screenshots',
+                navComparison: 'Why Not Phone Alarms?',
+                navPreview: 'How It Works',
                 navDownload: 'Download',
-                heroTitle: 'Track Your Hourly Parking with Precision!<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn</span> Safeguards Your Time Perfectly',
-                heroDesc: 'A smart parking timer designed for tracking hourly rates and shopping mall parking rewards. Simple, intuitive, and reliable so you never have to worry about paying for an extra hour due to a brief delay.',
+                heroTitle: 'Never Forget When Your Parking Expires.<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;">ParkWarn</span> Reminds You Before Time Runs Out.',
+                heroTagline: 'Never pay for an extra parking hour because you forgot the time.',
+                heroDesc: 'Designed for drivers to manage parking duration, free parking rewards, and estimated fees. Get timely alerts before expiry and avoid unnecessary extra fees.',
                 btnDownload: 'Download on Google Play',
                 featuresTitle: 'Why Choose <span class="text-emerald-400">ParkWarn</span>?',
-                f1Title: 'Multiple Warnings',
-                f1Desc: 'Customize countdown alerts to notify you precisely before hourly rates or free parking rewards expire, ensuring you have ample time to head back.',
-                f2Title: 'One-Tap Start',
-                f2Desc: 'Park, input spot info (e.g., B2 102) & rate, and tap to start. Sleek dark mode UI optimized for quick operation during daily parking and shopping.',
-                f3Title: 'Flexible Billing Rules',
-                f3Desc: 'Supports multiple tracking modes like "Per Hour", "Per half-hour", or "Real-time Pro-rata" to dynamically estimate your current hourly parking fee live.',
-                previewTitle: 'App Screenshots',
-                p1Text: 'Set Expiry Reminders',
-                p2Text: 'Parking History Logs',
-                p3Text: 'Live Cost Estimation',
-                p4Text: 'Push Notifications',
+                f1Title: 'Avoid Extra Parking Fees',
+                f1Desc: 'Receive multiple warnings before your parking duration or shopping rewards expire, giving you plenty of time to head back.',
+                f2Title: 'Start Timer Right After Parking',
+                f2Desc: 'Set up in 30 seconds! Simply enter your parking spot and rate after parking, then tap once to begin countdown.',
+                f3Title: 'Flexible Cost Estimation',
+                f3Desc: 'Supports various Hong Kong parking rules including hourly, half-hourly, and pro-rata billing to calculate fees in real time.',
+                compTitle: 'Why Not Just Use Phone Alarms?',
+                compSubtitle: 'A basic alarm only rings once. ParkWarn gives drivers a complete parking management experience:',
+                comp1Title: 'Multiple alerts instead of a single alarm',
+                comp1Desc: 'Ensures you won't dismiss a single alarm and forget to return.',
+                comp2Title: 'Supports multiple parking billing models',
+                comp2Desc: 'Calculated according to real parking rules, not simple countdowns.',
+                comp3Title: 'Real-time estimated parking fees',
+                comp3Desc: 'Check your accumulated charges at any moment in the app.',
+                comp4Title: 'Tracks parking spot and history',
+                comp4Desc: 'Easily note your spot (e.g. B2 102) so you never lose your car in huge malls.',
+                comp5Title: 'Manages mall free parking rewards',
+                comp5Desc: 'Accurately counts down reward limits to maximize your shopping perks.',
+                previewTitle: 'Start Parking in 4 Steps',
+                previewSubtitle: 'A simple, smooth process designed to save your time and money',
+                p1Text: 'Set Parking Time',
+                p2Text: 'Start Countdown',
+                p3Text: 'Check Estimated Fee',
+                p4Text: 'Get Timely Alerts',
                 statusTitle: 'Coming Soon to Google Play',
-                statusDesc: 'Our app is currently undergoing final closed testing and official review from Google. We are committed to delivering a rock-solid, uninterrupted parking tracking experience.',
-                statusTag: 'Under Google Play Review (Submitted on Jul 2)'
+                statusDesc: 'ParkWarn is currently undergoing final review on Google Play and will be available very soon.',
+                statusTag: 'Google Play Reviewing'
             }
         };
 
