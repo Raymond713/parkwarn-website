@@ -6,13 +6,29 @@
     <title>ParkWarn 泊車旺 - 泊車計時提醒助手</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 1. 預設（舊版瀏覽器）：直接使用翡翠綠文字，避免漸層背景被當成塊狀填色遮住文字 */
+        .gradient-text {
+            color: #34d399; /* 相當於 emerald-400 */
+        }
+
+        /* 2. 新版瀏覽器：當支援 background-clip 時，才套用漸層與透明文字 */
+        @supports (-webkit-background-clip: text) or (background-clip: text) {
+            .gradient-text {
+                background-image: linear-gradient(to right, #34d399, #2dd4bf);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
     <nav class="container mx-auto px-6 py-5 flex justify-between items-center border-b border-gray-900">
         <div class="text-xl md:text-2xl font-bold flex items-center gap-3 tracking-wide">
             <img src="icon.png" alt="ParkWarn Icon" class="w-9 h-9 rounded-xl shadow-md">
-            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent" style="-webkit-background-clip: text; background-clip: text;" data-lang="navTitle">ParkWarn 泊車旺</span>
+            <span class="gradient-text font-bold" data-lang="navTitle">ParkWarn 泊車旺</span>
         </div>
         <div class="flex items-center gap-4 md:gap-6">
             <a href="#features" data-lang="navFeatures" class="text-gray-400 hover:text-emerald-400 transition text-sm md:text-base hidden sm:inline">功能特點</a>
@@ -38,7 +54,7 @@
         
         <h1 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-tight" data-lang-html="heroTitle">
             忘記泊車時間？<br>
-            <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn</span> 在泊車期限前主動提醒您，避免超時多付泊車費。
+            <span class="gradient-text">ParkWarn</span> 在泊車期限前主動提醒您，避免超時多付泊車費。
         </h1>
 
         <!-- Highlight Key Selling Point Badge -->
@@ -60,7 +76,7 @@
     <section id="features" class="bg-gray-900/50 border-y border-gray-900 py-20">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16 tracking-wide" data-lang-html="featuresTitle">
-                為什麼選擇 <span class="text-emerald-400">泊車旺</span>？
+                為什麼選擇 <span class="gradient-text">泊車旺</span>？
             </h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition group">
@@ -76,7 +92,7 @@
                 <div class="p-8 bg-gray-900 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition group">
                     <div class="text-emerald-400 text-3xl mb-5 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-calculator"></i></div>
                     <h3 class="text-xl font-bold mb-3" data-lang="f3Title">靈活估算泊車費用</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm" data-lang="f3Desc">支援香港常見泊車場的不同收費模式，包括每小時、不足半小時及按比例收費，即時估算目前泊車費。</p>
+                    <p class="text-gray-400 leading-relaxed text-sm" data-lang="f3Desc">支援香港常見停車場的不同收費模式，包括每小時、不足半小時及按比例收費，即時估算目前泊車費。</p>
                 </div>
             </div>
         </div>
@@ -104,7 +120,7 @@
                     <div class="text-emerald-400 text-xl mt-0.5"><i class="fa-solid fa-circle-check"></i></div>
                     <div>
                         <h4 class="font-bold text-lg text-white" data-lang="comp2Title">支援多種泊車收費模式</h4>
-                        <p class="text-gray-400 text-sm mt-1" data-lang="comp2Desc">專為香港各類泊車場規則計算，非單純時間倒數。</p>
+                        <p class="text-gray-400 text-sm mt-1" data-lang="comp2Desc">專為香港各類停車場規則計算，非單純時間倒數。</p>
                     </div>
                 </div>
                 <div class="py-4 flex items-start gap-4">
@@ -189,23 +205,23 @@
                 navComparison: '為什麼不用鬧鐘？',
                 navPreview: '使用流程',
                 navDownload: '免費下載',
-                heroTitle: '忘記泊車時間？<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn</span> 在泊車期限前主動提醒您，避免超時多付泊車費。',
+                heroTitle: '忘記泊車時間？<br><span class="gradient-text">ParkWarn</span> 在泊車期限前主動提醒您，避免超時多付泊車費。',
                 heroTagline: '別因一時忘記，而多付一小時泊車費。',
                 heroDesc: '專為香港車主設計，協助您管理泊車時間、免泊優惠及泊車費估算。到期前主動提醒，避免因一時忘記而多付泊車費。',
                 btnDownload: 'Google Play 下載',
-                featuresTitle: '為什麼選擇 <span class="text-emerald-400">泊車旺</span>？',
+                featuresTitle: '為什麼選擇 <span class="gradient-text">泊車旺</span>？',
                 f1Title: '避免超時收費',
                 f1Desc: '在泊車時間或免泊優惠即將結束前發出多次提醒，讓您有足夠時間返回車輛。',
                 f2Title: '泊車後立即開始計時',
                 f2Desc: '30 秒即可完成設定！停好車後只需輸入車位與時租，一鍵即刻啟動倒數與記錄。',
                 f3Title: '靈活估算泊車費用',
-                f3Desc: '支援香港常見泊車場的不同收費模式，包括每小時、不足半小時及按比例收費，即時估算目前泊車費。',
+                f3Desc: '支援香港常見停車場的不同收費模式，包括每小時、不足半小時及按比例收費，即時估算目前泊車費。',
                 compTitle: '為什麼不用手機鬧鐘？',
                 compSubtitle: '普通鬧鐘只能單次響鬧，ParkWarn 為車主提供全方位的泊車管理體驗：',
                 comp1Title: '多次提醒，而不是只有一次鬧鐘',
                 comp1Desc: '提供預警彈性，避免響一次後按掉就忘記返回車輛。',
                 comp2Title: '支援多種泊車收費模式',
-                comp2Desc: '專為香港各類泊車場規則計算，非單純時間倒數。',
+                comp2Desc: '專為香港各類停車場規則計算，非單純時間倒數。',
                 comp3Title: '即時估算目前泊車費',
                 comp3Desc: '隨時開啟 App 即可了解當前已累積的費用進度。',
                 comp4Title: '記錄泊車位置及歷史',
@@ -228,23 +244,23 @@
                 navComparison: '为什么不用闹钟？',
                 navPreview: '使用流程',
                 navDownload: '免费下载',
-                heroTitle: '忘记泊车时间？<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn</span> 在泊车期限前主动提醒您，避免超时多付泊车费。',
+                heroTitle: '忘记泊车时间？<br><span class="gradient-text">ParkWarn</span> 在泊车期限前主动提醒您，避免超时多付泊车费。',
                 heroTagline: '别因一时忘记，而多付一小时泊车费。',
                 heroDesc: '专为车主设计，协助您管理泊车时间、免泊优惠及泊车费估算。到期前主动提醒，避免因一时忘记而多付泊车费。',
                 btnDownload: 'Google Play 下载',
-                featuresTitle: '为什么选择 <span class="text-emerald-400">泊车旺</span>？',
+                featuresTitle: '为什么选择 <span class="gradient-text">泊车旺</span>？',
                 f1Title: '避免超时收费',
                 f1Desc: '在泊车时间或免泊优惠即将结束前发出多次提醒，让您有足够时间返回车辆。',
                 f2Title: '泊车后立即开始计时',
                 f2Desc: '30 秒即可完成设定！停好车后只需输入车位与时租，一键即刻启动倒数与记录。',
                 f3Title: '灵活估算泊车费用',
-                f3Desc: '支持常见泊车场的不同收费模式，包括每小时、不足半小时及按比例收费，即时估算目前泊车费。',
+                f3Desc: '支持常见停车场的不同收费模式，包括每小时、不足半小时及按比例收费，即时估算目前泊车费。',
                 compTitle: '为什么不用闹钟？',
                 compSubtitle: '普通闹钟只能单次响闹，ParkWarn 为车主提供全方位的泊车管理体验：',
                 comp1Title: '多次提醒，而不是只有一次闹钟',
                 comp1Desc: '提供预警弹性，避免响一次后按掉就忘记返回车辆。',
                 comp2Title: '支持多种泊车收费模式',
-                comp2Desc: '专为各类泊车场规则计算，非单纯时间倒数。',
+                comp2Desc: '专为各类停车场规则计算，非单纯时间倒数。',
                 comp3Title: '即时估算目前泊车费',
                 comp3Desc: '随时开启 App 即可了解当前已累积的费用进度。',
                 comp4Title: '记录泊车位置及历史',
@@ -267,11 +283,11 @@
                 navComparison: 'Why Not Phone Alarms?',
                 navPreview: 'How It Works',
                 navDownload: 'Download',
-                heroTitle: 'Never Forget When Your Parking Expires.<br><span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">ParkWarn</span> Reminds You Before Time Runs Out.',
+                heroTitle: 'Never Forget When Your Parking Expires.<br><span class="gradient-text">ParkWarn</span> Reminds You Before Time Runs Out.',
                 heroTagline: 'Never pay for an extra parking hour because you forgot the time.',
                 heroDesc: 'Designed for drivers to manage parking duration, free parking rewards, and estimated fees. Get timely alerts before expiry and avoid unnecessary extra fees.',
                 btnDownload: 'Download on Google Play',
-                featuresTitle: 'Why Choose <span class="text-emerald-400">ParkWarn</span>?',
+                featuresTitle: 'Why Choose <span class="gradient-text">ParkWarn</span>?',
                 f1Title: 'Avoid Extra Parking Fees',
                 f1Desc: 'Receive multiple warnings before your parking duration or shopping rewards expire, giving you plenty of time to head back.',
                 f2Title: 'Start Timer Right After Parking',
@@ -303,30 +319,42 @@
         };
 
         function changeLanguage(lang) {
-            // 純文字替換 (使用 textContent 避免 XSS)
+            if (!langData[lang]) return;
+
+            // 1. 純文字替換 (使用 textContent 避免 XSS)
             document.querySelectorAll('[data-lang]').forEach(element => {
                 const key = element.getAttribute('data-lang');
-                if (langData[lang][key]) {
+                if (langData[lang][key] !== undefined) {
                     element.textContent = langData[lang][key];
                 }
             });
 
-            // 包含 HTML 標籤的替換 (使用 innerHTML)
+            // 2. 包含 HTML 標籤的替換 (使用 innerHTML)
             document.querySelectorAll('[data-lang-html]').forEach(element => {
                 const key = element.getAttribute('data-lang-html');
-                if (langData[lang][key]) {
+                if (langData[lang][key] !== undefined) {
                     element.innerHTML = langData[lang][key];
                 }
             });
 
+            // 3. 同步更新 <select> 選單狀態
+            const selectElem = document.getElementById('langSelect');
+            if (selectElem && selectElem.value !== lang) {
+                selectElem.value = lang;
+            }
+
+            // 4. 更新 html 標籤的 lang 屬性
+            document.documentElement.lang = lang;
+
+            // 5. 儲存設定
             localStorage.setItem('preferredLang', lang);
         }
 
-        window.onload = function() {
+        // 改用 DOMContentLoaded 避免因圖片下載過久而延遲觸發切換
+        document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLang') || 'zh-HK';
-            document.getElementById('langSelect').value = savedLang;
             changeLanguage(savedLang);
-        };
+        });
     </script>
 </body>
 </html>
